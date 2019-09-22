@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import { Form, Input } from '@rocketseat/unform';
 
@@ -16,6 +16,7 @@ const schema = Yup.object().shape({
 
 export default function SignIn() {
   const dispatch = useDispatch();
+  const { isLoading } = useSelector(state => state.auth);
 
   function handleSubmit({ email, password }) {
     dispatch(signInRequest(email, password));
@@ -33,7 +34,7 @@ export default function SignIn() {
           placeholder="sua senha secreta"
         />
 
-        <button type="submit">Acessar</button>
+        <button type="submit">{isLoading ? 'Carregando...' : 'Acessar'}</button>
 
         <Link to="/register">
           Ainda não tem uma conta? Criar uma conta gratuita

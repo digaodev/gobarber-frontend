@@ -69,6 +69,7 @@ export const Content = styled.div`
 
         &:hover {
           opacity: 1;
+          text-decoration: underline;
         }
       }
   }
