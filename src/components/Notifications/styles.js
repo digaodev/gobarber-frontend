@@ -30,6 +30,8 @@ export const Badge = styled.button`
 `;
 
 export const NotificationList = styled.div`
+  display: ${props => (props.isVisible ? 'block' : 'none')}
+
   position: absolute;
   left: calc(50% - 130px);
   top: calc(100% + 32px);
@@ -73,18 +75,20 @@ export const Notification = styled.div`
   }
 
   time {
+    display: block;
+
     font-size: 12px;
+    margin-bottom: 4px;
     opacity: 0.6;
   }
 
   button {
     background: none;
     border: 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
     color: ${lighten(0.2, '#7159c1')};
     font-size: 12px;
-    margin: 0 5px;
-    padding: 0 5px;
+    margin: 0;
+    padding: 0;
     transition: color 0.2s;
 
     &:hover {
@@ -102,6 +106,7 @@ export const Notification = styled.div`
         background: #ff892e;
         border-radius: 50%;
         height: 8px;
+        margin-left: 10px;
         width: 8px;
       }
     `}
