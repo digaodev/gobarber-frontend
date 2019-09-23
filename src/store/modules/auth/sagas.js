@@ -9,7 +9,18 @@ import {
   signInSuccess,
   SIGN_UP_REQUEST,
   signFailure,
+  SIGN_OUT,
 } from './actions';
+
+export function setAuthToken({ payload }) {
+  if (!payload) return;
+
+  const { token } = payload.auth;
+
+  if (token) {
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+  }
+}
 
 export function* signIn({ payload }) {
   try {
@@ -54,18 +65,13 @@ export function* signUp({ payload }) {
   }
 }
 
-export function setAuthToken({ payload }) {
-  if (!payload) return;
-
-  const { token } = payload.auth;
-
-  if (token) {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-  }
+export function signOut() {
+  history.push('/');
 }
 
 export default all([
   takeLatest('persist/REHYDRATE', setAuthToken),
   takeLatest(SIGN_IN_REQUEST, signIn),
   takeLatest(SIGN_UP_REQUEST, signUp),
+  takeLatest(SIGN_OUT, signOut),
 ]);

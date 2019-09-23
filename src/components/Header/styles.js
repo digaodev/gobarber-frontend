@@ -54,10 +54,27 @@ export const Profile = styled.div`
     }
 
     a {
-      display: block;
+      /* display: block; */
 
       color: #999;
       font-size: 12px;
+      margin-top: 2px;
+      padding: 0 4px;
+      transition: all 0.2s;
+
+      &:hover {
+        color: #666;
+        text-decoration: underline;
+      }
+    }
+
+    button {
+      border: 0;
+      border-left: 1px solid #666;
+      background: none;
+      color: #999;
+      font-size: 12px;
+      padding: 0 4px;
       margin-top: 2px;
       transition: all 0.2s;
 

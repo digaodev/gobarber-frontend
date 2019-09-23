@@ -20,3 +20,8 @@ export const SIGN_FAILURE = '@auth/SIGN_FAILURE';
 export const signFailure = () => ({
   type: SIGN_FAILURE,
 });
+
+export const SIGN_OUT = '@auth/SIGN_OUT';
+export const signOut = () => ({
+  type: SIGN_OUT,
+});
