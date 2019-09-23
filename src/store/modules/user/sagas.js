@@ -11,9 +11,9 @@ import {
 
 export function* updateProfile({ payload }) {
   try {
-    const { name, email, ...rest } = payload.data;
+    const { name, email, avatar_id, ...rest } = payload.data;
 
-    let profile = { name, email };
+    let profile = { name, email, avatar_id };
 
     if (rest.oldPassword) {
       profile = { ...profile, ...rest };
