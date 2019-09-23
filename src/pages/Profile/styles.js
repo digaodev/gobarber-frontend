@@ -1,21 +1,11 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div`
+margin: 50px auto;
+max-width: 600px;
 
-  background: linear-gradient(-90deg, #7159c1, #ab59c1);
-  height: 100%;
-`;
-
-export const Content = styled.div`
-  max-width: 325px;
-  text-align: center;
-  width: 100%;
-
-  form {
+form {
     display: flex;
     flex-direction: column;
 
@@ -42,6 +32,13 @@ export const Content = styled.div`
       margin-bottom: 10px;
     }
 
+    hr {
+      background: rgba(255,255,255,0.2);
+      border: 0;
+      height: 1px;
+      margin: 10px 0 20px;
+    }
+
     button {
         background: #fff;
         border: 0;
@@ -51,7 +48,7 @@ export const Content = styled.div`
         height: 44px;
         margin: 5px 0 0;
 
-        transition: all 0.3s;
+        transition: all 0.3s
 
         &:hover {
           background: ${darken(0.03, '#715fc1')};
@@ -65,12 +62,45 @@ export const Content = styled.div`
         margin-top: 15px;
         opacity: 0.8;
 
-        transition: all 0.2s;
+        transition: all 0.2s
 
         &:hover {
           opacity: 1;
           text-decoration: underline;
         }
       }
+
+
   }
+
+  > button {
+        background: #f64c75;
+        border: 0;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: bold;
+        height: 44px;
+        margin: 5px 0 0;
+        width: 100%;
+        transition: all 0.3s;
+
+        &:hover {
+          background: #fff;
+          color: #f64c75;
+        }
+      }
+
+      a {
+        color: #fff;
+        font-size: 14px;
+        margin-top: 15px;
+        opacity: 0.8;
+
+        transition: all 0.2s
+
+        &:hover {
+          opacity: 1;
+          text-decoration: underline;
+        }
+      }
 `;

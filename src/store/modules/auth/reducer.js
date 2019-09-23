@@ -26,7 +26,6 @@ export default (state = INITIAL_STATE, { type, payload }) => {
         break;
       }
       default:
-        return state;
     }
   });
 };
