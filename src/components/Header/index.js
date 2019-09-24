@@ -29,8 +29,9 @@ export default function Header() {
               <strong>{profile.name}</strong>
 
               <Link to="profile">Meu perfil</Link>
+              <span>|</span>
               <button type="button" onClick={() => dispatch(signOut())}>
-                Sign out
+                Sair
               </button>
             </div>
 

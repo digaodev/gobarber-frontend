@@ -54,12 +54,10 @@ export const Profile = styled.div`
     }
 
     a {
-      /* display: block; */
-
-      color: #999;
+      color: #777;
       font-size: 12px;
       margin-top: 2px;
-      padding: 0 4px;
+      padding: 2px;
       transition: all 0.2s;
 
       &:hover {
@@ -68,13 +66,17 @@ export const Profile = styled.div`
       }
     }
 
+    span {
+      color: #ddd;
+      margin: 0 4px;
+    }
+
     button {
       border: 0;
-      border-left: 1px solid #666;
       background: none;
-      color: #999;
+      color: #777;
       font-size: 12px;
-      padding: 0 4px;
+      padding: 2px;
       margin-top: 2px;
       transition: all 0.2s;
 
